@@ -6,12 +6,14 @@ const concat = require("gulp-concat"); // Joins files together
 const uglify = require("gulp-uglify"); // Removing new line characters and white space
 const livereload = require("gulp-livereload"); // Reloads html on changes
 const plumber = require("gulp-plumber"); // Error handling for Gulp tasks
-const sourcemaps = require("gulp-sourecemaps"); // Identifies root file instead of concatenated file
+const sourcemaps = require("gulp-sourcemaps"); // Identifies root file instead of concatenated file
 
 // Sass plug-ins
 const autoprefixer = require("gulp-autoprefixer"); // Browser compatibility
 const sass = require("gulp-sass");
-const neat = require("node-neat").includePaths;
+// const neat = require("node-neat").includePaths;
+const bourbon = require("bourbon").includePaths;
+const neat = require("bourbon-neat").includePaths;
 
 // Delete plug-in
 const del = require("del"); // Deletes dist file anytime tasks are run to keep file structure clean
@@ -37,7 +39,8 @@ gulp.task("styles", function() {
 		.src(SASS_PATH)
 		.pipe(
 			sass({
-				includePaths: ["styles"].concat(neat)
+				sourcemaps: true,
+				includePaths: [bourbon, neat]
 			})
 		)
 		.pipe(sourcemaps.init())
@@ -80,14 +83,7 @@ gulp.task("scripts", function() {
 gulp.task("images", function() {
 	return gulp
 		.src(IMAGES_PATH)
-		.pipe(
-			imagemin([
-				imagemin.jpegtran(),
-				imagemin.optipng(),
-				imgmin.imageminPNGquant(),
-				imgmin.imageminJPEGRecompress()
-			])
-		)
+		.pipe(imagemin([imagemin.jpegtran(), imagemin.optipng(), imageminPNGquant(), imageminJPEGRecompress()]))
 		.pipe(gulp.dest(DIST_PATH + "/images"));
 });
 
@@ -98,7 +94,7 @@ gulp.task("clean", function() {
 });
 
 // Default task
-gulp.task("default", ["clean", "images", "styles", "scriipts"], function() {
+gulp.task("default", ["clean", "images", "styles", "scripts"], function() {
 	console.log("Default task starting.");
 });
 

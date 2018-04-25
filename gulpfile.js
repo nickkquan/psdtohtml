@@ -70,7 +70,7 @@ gulp.task("scripts", function() {
 		)
 		.pipe(sourcemaps.init())
 		.pipe(uglify())
-		.pipe(concat("scripts.js"))
+		.pipe(concat("script.js"))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest(DIST_PATH))
 		.pipe(livereload());

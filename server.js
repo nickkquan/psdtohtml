@@ -1,5 +1,3 @@
-// Use command `node server.js to run` 
-
 const StaticServer = require("static-server");
 
 const server = new StaticServer({
@@ -7,6 +5,6 @@ const server = new StaticServer({
 	port: 3000
 });
 
-server.start(function() {
-	console.log("Loud and clear on port: ", server.port);
+server.start(() => {
+	console.log("Battlecruiser operational. Running on port: ", server.port);
 });

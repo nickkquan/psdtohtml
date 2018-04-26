@@ -28,7 +28,7 @@ const zip = require("gulp-zip");
 const DIST_PATH = "client/dist";
 const SCRIPTS_PATH = "client/scripts/**/*.js";
 const SASS_PATH = "client/scss/**/*.scss";
-const IMAGES_PATH = "client/images/**/*.{png,jpeg,jpg}";
+const IMAGES_PATH = "client/images/**/*.{png,jpeg,jpg,gif,svg}";
 
 // Sass task
 gulp.task("styles", () => {

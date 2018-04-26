@@ -1,0 +1,57 @@
+.about {
+	@include grid-container;
+    width: 80%;
+    height: 60%;
+	margin: auto;
+
+	&__tagline {
+		@include grid-container;
+
+		h2 {
+			@include grid-column(12);
+			@include padding(0 0 2.5rem);
+			color: $color-white;
+			line-height: 3rem;
+			font-size: 3.5rem;
+			border-bottom: 5px solid $color-dark-grey-1;
+		}
+
+		span {
+			color: $color-red-1;
+		}
+	}
+
+	&__featured-work {
+		@include grid-container;
+	}
+	&__the-wire {
+		@include grid-container;
+	}
+
+	&__featured-work--title,
+	&__the-wire--title {
+		@include margin(0 0 2rem 0);
+		font-size: $default-font-size;
+		font-weight: bold;
+		color: $color-grey;
+
+		p {
+			@include padding(0 0 1.5rem 0);
+			@include margin(2rem 0);
+			@include grid-column(12);
+			border-bottom: 1px solid $color-dark-grey-1;
+		}
+
+		a {
+			@include padding(0 0 0 0.5rem);
+			font-size: $default-font-size;
+			color: $color-red-1;
+			text-decoration: none;
+
+			&:hover {
+				color: $color-white;
+				transition: 0.25s;
+			}
+		}
+	}
+}

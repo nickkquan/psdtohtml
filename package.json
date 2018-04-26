@@ -17,8 +17,6 @@
 	},
 	"homepage": "https://github.com/nickkquan/psdtohtml#readme",
 	"devDependencies": {
-		"bourbon": "^5.0.0",
-		"bourbon-neat": "^1.9.0",
 		"del": "^3.0.0",
 		"gulp": "^3.9.1",
 		"gulp-autoprefixer": "^5.0.0",
@@ -31,7 +29,9 @@
 		"gulp-uglify": "^3.0.0",
 		"gulp-zip": "^4.1.0",
 		"imagemin-jpeg-recompress": "^5.1.0",
-		"imagemin-pngquant": "^5.1.0"
+		"imagemin-pngquant": "^5.1.0",
+		"node-bourbon": "^4.2.8",
+		"node-neat": "^2.0.0-beta.0"
 	},
 	"dependencies": {
 		"static-server": "^2.2.1"

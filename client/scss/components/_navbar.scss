@@ -2,7 +2,7 @@
 	@include padding(0 2rem);
 	background-color: rgba(0, 0, 0, 0.75);
 	width: 100%;
-	position: fixed;
+	// position: fixed;
 	z-index: 5;
 
 	&-bar {
@@ -20,7 +20,7 @@
 			font-size: 3.2rem;
 			line-height: 0.8rem;
 		}
-		
+
 		li {
 			float: left;
 
@@ -46,6 +46,10 @@
 
 				&:hover {
 					color: $color-red-1;
+				}
+
+				&:visited {
+					color: $color-grey;
 				}
 			}
 

@@ -9,8 +9,8 @@ const sourcemaps = require("gulp-sourcemaps"); // Identifies root files instead 
 
 // Sass plug-ins
 const autoprefixer = require("gulp-autoprefixer"); // Browser compatibility
-const bourbon = require("bourbon").includePaths;
-const neat = require("bourbon-neat").includePaths;
+const bourbon = require("node-bourbon").includePaths;
+const neat = require("node-neat").includePaths;
 const sass = require("gulp-sass");
 
 // Delete plug-in
@@ -36,7 +36,7 @@ gulp.task("styles", () => {
 	return gulp
 		.src(SASS_PATH)
 		.pipe(
-			plumber(error => {
+			plumber(function(error) {
 				console.log("Styles task error.");
 				console.log(error);
 				this.emit("end");
@@ -69,7 +69,7 @@ gulp.task("scripts", () => {
 	return gulp
 		.src(SCRIPTS_PATH)
 		.pipe(
-			plumber(error => {
+			plumber(function(error) {
 				console.log("Encountered scripts task error!");
 				console.log(error);
 				this.emit("end");

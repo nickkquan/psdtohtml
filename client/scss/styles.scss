@@ -1,15 +1,16 @@
 @import "bourbon";
 @import "neat";
 
+@import "abstracts/fonts";
 @import "abstracts/mixins";
 @import "abstracts/variables";
-@import "abstracts/fonts";
 
 @import "base/base";
 @import "base/typography";
 
-@import "components/navbar";
 @import "components/about";
+@import "components/carousel";
+@import "components/navbar";
 
 @import "pages/home";
 

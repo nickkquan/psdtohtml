@@ -1,39 +1,39 @@
 {
-  "name": "envoy",
-  "version": "1.0.0",
-  "description": "psd to html conversion ",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nickkquan/psdtohtml.git"
-  },
-  "author": "Nick Quan",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/nickkquan/psdtohtml/issues"
-  },
-  "homepage": "https://github.com/nickkquan/psdtohtml#readme",
-  "devDependencies": {
-    "del": "^3.0.0",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^5.0.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-imagemin": "^4.1.0",
-    "gulp-livereload": "^3.8.1",
-    "gulp-plumber": "^1.2.0",
-    "gulp-sass": "^4.0.1",
-    "gulp-sourcemaps": "^2.6.4",
-    "gulp-uglify": "^3.0.0",
-    "gulp-zip": "^4.1.0",
-    "imagemin-jpeg-recompress": "^5.1.0",
-    "imagemin-pngquant": "^5.1.0",
-    "node-bourbon": "^4.2.8",
-    "node-neat": "^2.0.0-beta.0"
-  },
-  "dependencies": {
-    "static-server": "^2.2.1"
-  }
+	"name": "envoy",
+	"version": "1.0.0",
+	"description": "psd to html conversion ",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nickkquan/psdtohtml.git"
+	},
+	"author": "Nick Quan",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/nickkquan/psdtohtml/issues"
+	},
+	"homepage": "https://github.com/nickkquan/psdtohtml#readme",
+	"devDependencies": {
+		"bourbon": "^5.0.0",
+		"bourbon-neat": "^1.9.0",
+		"del": "^3.0.0",
+		"gulp": "^3.9.1",
+		"gulp-autoprefixer": "^5.0.0",
+		"gulp-concat": "^2.6.1",
+		"gulp-imagemin": "^4.1.0",
+		"gulp-livereload": "^3.8.1",
+		"gulp-plumber": "^1.2.0",
+		"gulp-sass": "^4.0.1",
+		"gulp-sourcemaps": "^2.6.4",
+		"gulp-uglify": "^3.0.0",
+		"gulp-zip": "^4.1.0",
+		"imagemin-jpeg-recompress": "^5.1.0",
+		"imagemin-pngquant": "^5.1.0"
+	},
+	"dependencies": {
+		"static-server": "^2.2.1"
+	}
 }

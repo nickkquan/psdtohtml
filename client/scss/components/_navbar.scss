@@ -1,0 +1,62 @@
+.navigation {
+	@include padding(0 2rem);
+	background-color: rgba(0, 0, 0, 0.75);
+	width: 100%;
+	position: fixed;
+	z-index: 5;
+
+	&-bar {
+		@include padding(0.8rem 0);
+		list-style-type: none;
+		min-height: 6rem;
+		width: 80%;
+		margin: auto;
+
+		.envoy-logo {
+			text-decoration: none;
+			text-transform: uppercase;
+			color: $color-grey;
+			font-family: tradeGothic;
+			font-size: 3.2rem;
+			line-height: 0.8rem;
+		}
+		
+		li {
+			float: left;
+
+			&.logo-container.navigation-link {
+				top: 1.8rem;
+				position: relative;
+			}
+
+			&.navigation-link {
+				top: 2.1rem;
+				position: relative;
+			}
+
+			a:not(.envoy-logo) {
+				@include padding(0 0 0 2.5rem);
+				@include margin(0);
+				display: inline-block;
+				color: $color-white;
+				transition: 0.25s;
+				text-decoration: none;
+				font-weight: bold;
+				font-size: $default-font-size;
+
+				&:hover {
+					color: $color-red-1;
+				}
+			}
+
+			&.twitter-button {
+				float: right;
+
+				img {
+					position: relative;
+					bottom: -$default-font-size;
+				}
+			}
+		}
+	}
+}

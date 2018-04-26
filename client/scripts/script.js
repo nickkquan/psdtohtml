@@ -1,1 +1,5 @@
-console.log("testing");
+$(document).ready(initializeCarousel);
+
+function initializeCarousel() {
+	$(".carousel").slick();
+}

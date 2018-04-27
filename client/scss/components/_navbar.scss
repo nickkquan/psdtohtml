@@ -1,16 +1,16 @@
 .navigation {
 	@include padding(0 2rem);
+	@include size(100% auto);
+
 	background-color: rgba(0, 0, 0, 0.75);
-	width: 100%;
 	position: fixed;
 	z-index: 5;
 
 	&-bar {
 		@include padding(0.8rem 0);
+		@include grid-container;
 		list-style-type: none;
-		min-height: 6rem;
-		width: 80%;
-		margin: auto;
+		min-height: 5vh;
 
 		.envoy-logo {
 			text-decoration: none;
@@ -25,16 +25,20 @@
 			float: left;
 
 			&.logo-container.navigation-link {
-				top: 1.8rem;
+				top: 2vh;
 				position: relative;
 			}
 
 			&.navigation-link {
-				top: 2.1rem;
+				top: 2.5vh;
 				position: relative;
 			}
 
 			a:not(.envoy-logo) {
+				@include respond(phone) {
+					display: none;
+				}
+
 				@include padding(0 0 0 2.5rem);
 				@include margin(0);
 				display: inline-block;
@@ -54,11 +58,15 @@
 			}
 
 			&.twitter-button {
+				@include respond(phone) {
+					display: none;
+				}
+
 				float: right;
 
 				img {
 					position: relative;
-					bottom: -$default-font-size;
+					bottom: -0.3vh;
 				}
 			}
 		}

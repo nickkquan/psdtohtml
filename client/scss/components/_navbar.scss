@@ -49,17 +49,20 @@
 				@include margin(0);
 				display: inline-block;
 				color: $color-white;
-				transition: 0.25s;
+
 				text-decoration: none;
 				font-weight: bold;
 				font-size: $default-font-size;
 
-				&:hover {
-					color: $color-red-1;
-				}
-
 				&:visited {
 					color: $color-grey;
+				}
+			}
+
+			a {
+				transition: 0.25s;
+				&:hover {
+					color: $color-red-1;
 				}
 			}
 
@@ -84,6 +87,8 @@
 		}
 	}
 
+	//Responsive hamburger menu
+	
 	@include respond(tab-port) {
 		.navigation-bar li:not(:first-child) {
 			display: none;
@@ -95,12 +100,12 @@
 		}
 
 		.navigation-bar.responsive {
-			@include padding(8px 0 30px);
+			@include padding(0.5rem 0 3rem);
 			position: relative;
 		}
 
 		.navigation-bar.responsive li.navigation-mobile {
-			// @include padding(8px 0px);
+			@include padding(0.5rem 0);
 			position: absolute;
 			right: 0;
 			top: 0;
@@ -112,8 +117,11 @@
 		}
 
 		.navigation-bar.responsive li a:not(.envoy-logo) {
+			@include padding(0);
+			@include margin(5% 0);
 			display: block;
 			text-align: left;
+			font-size: 1.5rem;
 		}
 
 		.navigation-bar.responsive li.twitter-button {

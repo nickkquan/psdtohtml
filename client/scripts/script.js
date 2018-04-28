@@ -2,6 +2,7 @@ $(document).ready(initalizeWebsite);
 
 function initalizeWebsite() {
 	initializeCarousel();
+	activateHamburgerMenu();
 }
 
 function initializeCarousel() {
@@ -11,5 +12,11 @@ function initializeCarousel() {
 		dots: true,
 		infinite: true,
 		mobileFirst: true
+	});
+}
+
+function activateHamburgerMenu() {
+	$("#hamburger-menu").on("click", function() {
+		$(".navigation-bar").toggleClass("responsive");
 	});
 }

@@ -22,11 +22,10 @@
 	.text-container {
 		height: 100%;
 		display: flex;
-		align-items: flex-end;
+		align-items: center;
 
 		.text {
 			position: relative;
-			top: -45%;
 
 			.red-text {
 				color: $color-red-2;
@@ -46,14 +45,12 @@
 
 			h1 {
 				@include respond(phone) {
-					font-size: 3rem;
-					line-height: 3rem;
 					text-shadow: 1px 1px rgba($color-black, 0.25);
 				}
 
 				font-family: tradeGothic;
-				font-size: 5rem;
-				line-height: 5rem;
+				font-size: 4rem;
+				line-height: 4rem;
 			}
 
 			p {
@@ -79,21 +76,25 @@
 	.text-left,
 	.text-right {
 		@include grid-column(4);
-		@include respond(phone) {
-			@include grid-column(12);
-		}
 	}
 
 	.text-left {
 		@include respond(phone) {
 			@include margin(0 0 0 5%);
+			@include grid-column(12);
 		}
+
+		@include respond(tablet) {
+			@include margin(5% 0 0 20%);
+		}
+
 		@include margin(0 0 0 20%);
 	}
 
 	.text-right {
 		@include respond(phone) {
-			@include margin(0 5% 0 0);
+			@include grid-column(10);
+			@include margin(0 0 0 25%);
 		}
 
 		@include margin(0 20% 0 0);
@@ -101,7 +102,7 @@
 	}
 }
 
-// Slick JS Slider overides
+// Slick JS Carousel Changes
 
 .slick-dots {
 	bottom: 2rem !important;

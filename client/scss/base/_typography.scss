@@ -2,3 +2,5 @@ body {
 	font-family: "Arial", sans-serif;
 	color: $color-grey;
 }
+
+@include font-face("tradeGothic", "../fonts/tradegothic", ".ttf", ".woff", ".woff2");

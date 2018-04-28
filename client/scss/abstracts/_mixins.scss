@@ -9,7 +9,7 @@ desktop = anything with a resolution higher than 1100+ px
 
 @mixin respond($breakpoint){
     @if $breakpoint == phone {
-        @media (max-width: 37.5em) {@content};
+        @media (max-width: 32em) {@content};
     }
 
     @if $breakpoint == tab-port {

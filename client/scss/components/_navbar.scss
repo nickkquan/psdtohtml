@@ -9,12 +9,14 @@
 		@include respond(tab-port) {
 			width: 100%;
 		}
+
 		@include padding(0.8rem 0);
 		@include grid-container;
 		list-style-type: none;
-		min-height: 5vh;
+		min-height: 6.5vh;
 		width: 80%;
 		margin: auto;
+		overflow: hidden;
 
 		.envoy-logo {
 			text-decoration: none;
@@ -38,26 +40,29 @@
 				position: relative;
 			}
 
-			a:not(.envoy-logo) {
-				@include respond(tab-port) {
-					display: none;
-				}
+			&.navigation-mobile {
+				display: none;
+			}
 
+			a:not(.envoy-logo) {
 				@include padding(0 0 0 2.5rem);
 				@include margin(0);
 				display: inline-block;
 				color: $color-white;
-				transition: 0.25s;
+
 				text-decoration: none;
 				font-weight: bold;
 				font-size: $default-font-size;
 
-				&:hover {
-					color: $color-red-1;
-				}
-
 				&:visited {
 					color: $color-grey;
+				}
+			}
+
+			a {
+				transition: 0.25s;
+				&:hover {
+					color: $color-red-1;
 				}
 			}
 
@@ -73,23 +78,54 @@
 					bottom: -0.3vh;
 				}
 			}
-		}
 
-		&--mobile {
-			display: none;
-			@include respond(tab-port) {
-				display: inline-block;
-				float: right !important;
-				font-size: 3.2rem;
-				&:hover {
-					color: $color-red-1;
-					cursor: pointer;
+			&.navigation-mobile {
+				a {
+					font-size: 3rem !important;
 				}
 			}
 		}
 	}
-}
 
-.responsive {
-	display: block !important;
+	//Responsive hamburger menu
+	
+	@include respond(tab-port) {
+		.navigation-bar li:not(:first-child) {
+			display: none;
+		}
+
+		.navigation-bar li.navigation-mobile {
+			float: right;
+			display: block;
+		}
+
+		.navigation-bar.responsive {
+			@include padding(0.5rem 0 3rem);
+			position: relative;
+		}
+
+		.navigation-bar.responsive li.navigation-mobile {
+			@include padding(0.5rem 0);
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+
+		.navigation-bar.responsive li {
+			float: none;
+			display: inline;
+		}
+
+		.navigation-bar.responsive li a:not(.envoy-logo) {
+			@include padding(0);
+			@include margin(5% 0);
+			display: block;
+			text-align: left;
+			font-size: 1.5rem;
+		}
+
+		.navigation-bar.responsive li.twitter-button {
+			display: none;
+		}
+	}
 }

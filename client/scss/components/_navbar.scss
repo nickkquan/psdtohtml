@@ -3,7 +3,7 @@
 	@include size(100% auto);
 	background-color: rgba(0, 0, 0, 0.75);
 	position: fixed;
-	z-index: 5;
+	z-index: 10;
 
 	&-bar {
 		@include respond(tab-port) {
@@ -88,7 +88,7 @@
 	}
 
 	//Responsive hamburger menu
-	
+
 	@include respond(tab-port) {
 		.navigation-bar li:not(:first-child) {
 			display: none;

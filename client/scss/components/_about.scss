@@ -97,9 +97,11 @@
 	&__the-wire {
 		@include grid-container;
 		@include margin(0 0 25rem 0);
+		height: 100%;
 
 		&--project {
 			@include grid-column(4);
+			height: 100%;
 
 			@include respond(phone) {
 				@include grid-column(12);

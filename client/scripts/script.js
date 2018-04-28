@@ -11,7 +11,7 @@ function initializeCarousel() {
 		autoplaySpeed: 5000,
 		dots: true,
 		infinite: true,
-		mobileFirst: true
+		mobileFirst: true,
 	});
 }
 

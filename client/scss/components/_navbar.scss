@@ -2,6 +2,7 @@
 	@include padding(0 2rem);
 	@include size(100% auto);
 	background-color: rgba(0, 0, 0, 0.75);
+	transition: 1s;
 	position: fixed;
 	z-index: 10;
 
@@ -75,7 +76,7 @@
 
 				img {
 					position: relative;
-					bottom: -0.3vh;
+					bottom: -1.1rem;
 				}
 			}
 

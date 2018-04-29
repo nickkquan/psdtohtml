@@ -80,8 +80,8 @@
 
 	.text-left {
 		@include respond(phone) {
-			@include margin(0 0 0 5%);
 			@include grid-column(12);
+			@include margin(0 0 0 5%);
 		}
 
 		@include respond(tablet) {

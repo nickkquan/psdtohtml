@@ -88,8 +88,7 @@
 		}
 	}
 
-	//Responsive hamburger menu
-
+//Responsive hamburger menu
 	@include respond(tab-port) {
 		.navigation-bar li:not(:first-child) {
 			display: none;

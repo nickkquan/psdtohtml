@@ -1,20 +1,20 @@
 const gulp = require("gulp");
 
 // All-purpose plug-ins
-const concat = require("gulp-concat"); // Joins files together
-const uglify = require("gulp-uglify"); // Removing new line characters and white space
-const livereload = require("gulp-livereload"); // Reloads html on changes
-const plumber = require("gulp-plumber"); // Error handling for Gulp tasks
-const sourcemaps = require("gulp-sourcemaps"); // Identifies root files instead of concatenated file
+const concat = require("gulp-concat");
+const uglify = require("gulp-uglify");
+const livereload = require("gulp-livereload");
+const plumber = require("gulp-plumber");
+const sourcemaps = require("gulp-sourcemaps");
 
 // Sass plug-ins
-const autoprefixer = require("gulp-autoprefixer"); // Browser compatibility
+const autoprefixer = require("gulp-autoprefixer");
 const bourbon = require("node-bourbon").includePaths;
 const neat = require("node-neat").includePaths;
 const sass = require("gulp-sass");
 
 // Delete plug-in
-const del = require("del"); // Deletes dist file anytime tasks are run to keep file structure clean
+const del = require("del");
 
 // Image Compression
 const imagemin = require("gulp-imagemin");

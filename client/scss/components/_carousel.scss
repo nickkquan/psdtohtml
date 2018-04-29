@@ -130,7 +130,7 @@
 	@include respond(phone) {
 		display: none !important;
 	}
-	z-index: 5;
+	z-index: 2;
 	transform: translate(0, 0) !important;
 	top: 90% !important;
 }

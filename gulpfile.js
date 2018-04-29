@@ -1,22 +1,20 @@
-// Gulp
 const gulp = require("gulp");
 
 // All-purpose plug-ins
-const concat = require("gulp-concat"); // Joins files together
-const uglify = require("gulp-uglify"); // Removing new line characters and white space
-const livereload = require("gulp-livereload"); // Reloads html on changes
-const plumber = require("gulp-plumber"); // Error handling for Gulp tasks
-const sourcemaps = require("gulp-sourcemaps"); // Identifies root file instead of concatenated file
+const concat = require("gulp-concat");
+const uglify = require("gulp-uglify");
+const livereload = require("gulp-livereload");
+const plumber = require("gulp-plumber");
+const sourcemaps = require("gulp-sourcemaps");
 
 // Sass plug-ins
-const autoprefixer = require("gulp-autoprefixer"); // Browser compatibility
+const autoprefixer = require("gulp-autoprefixer");
+const bourbon = require("node-bourbon").includePaths;
+const neat = require("node-neat").includePaths;
 const sass = require("gulp-sass");
-// const neat = require("node-neat").includePaths;
-const bourbon = require("bourbon").includePaths;
-const neat = require("bourbon-neat").includePaths;
 
 // Delete plug-in
-const del = require("del"); // Deletes dist file anytime tasks are run to keep file structure clean
+const del = require("del");
 
 // Image Compression
 const imagemin = require("gulp-imagemin");
@@ -30,20 +28,26 @@ const zip = require("gulp-zip");
 const DIST_PATH = "client/dist";
 const SCRIPTS_PATH = "client/scripts/**/*.js";
 const SASS_PATH = "client/scss/**/*.scss";
-const IMAGES_PATH = "client/images/**/*.{png,jpeg,jpg}";
+const IMAGES_PATH = "client/images/**/*.{png,jpeg,jpg,gif,svg}";
 
 // Sass task
-gulp.task("styles", function() {
+gulp.task("styles", () => {
 	console.log("Styles task starting.");
 	return gulp
 		.src(SASS_PATH)
 		.pipe(
-			sass({
-				sourcemaps: true,
-				includePaths: [bourbon, neat]
+			plumber(function(error) {
+				console.log("Styles task error.");
+				console.log(error);
+				this.emit("end");
 			})
 		)
 		.pipe(sourcemaps.init())
+		.pipe(
+			sass({
+				includePaths: [bourbon, neat]
+			})
+		)
 		.pipe(
 			autoprefixer({
 				browsers: ["last 2 versions", "ie 8"]
@@ -60,7 +64,7 @@ gulp.task("styles", function() {
 });
 
 // Scripts task
-gulp.task("scripts", function() {
+gulp.task("scripts", () => {
 	console.log("Scripts task starting.");
 	return gulp
 		.src(SCRIPTS_PATH)
@@ -80,7 +84,7 @@ gulp.task("scripts", function() {
 });
 
 // Images task
-gulp.task("images", function() {
+gulp.task("images", () => {
 	return gulp
 		.src(IMAGES_PATH)
 		.pipe(imagemin([imagemin.jpegtran(), imagemin.optipng(), imageminPNGquant(), imageminJPEGRecompress()]))
@@ -88,18 +92,18 @@ gulp.task("images", function() {
 });
 
 // Clean task
-gulp.task("clean", function() {
+gulp.task("clean", () => {
 	console.log("Starting delete task.");
 	return del.sync([DIST_PATH]);
 });
 
 // Default task
-gulp.task("default", ["clean", "images", "styles", "scripts"], function() {
+gulp.task("default", ["clean", "images", "styles", "scripts"], () => {
 	console.log("Default task starting.");
 });
 
 // Export task
-gulp.task("export", function() {
+gulp.task("export", () => {
 	return gulp
 		.src("client/**/*")
 		.pipe(zip("production.zip"))
@@ -107,7 +111,7 @@ gulp.task("export", function() {
 });
 
 // Watch task
-gulp.task("watch", ["default"], function() {
+gulp.task("watch", ["default"], () => {
 	console.log("Watch task starting.");
 	require("./server.js");
 	livereload.listen();

@@ -1,0 +1,164 @@
+.about {
+	@include grid-container;
+
+	width: 80%;
+	margin: auto;
+
+	&__tagline {
+		@include grid-container;
+
+		h2 {
+			@include grid-column(12);
+			@include padding(4rem 0);
+			color: $color-white;
+			line-height: 4rem;
+			font-size: 3.5rem;
+			border-bottom: 5px solid $color-dark-grey-1;
+		}
+
+		span {
+			color: $color-red-1;
+		}
+	}
+
+	&__featured-work--title,
+	&__the-wire--title {
+		@include margin(0 0 2rem 0);
+		font-size: $default-font-size;
+		font-weight: bold;
+		color: $color-grey;
+
+		p {
+			@include respond(tab-port) {
+				font-size: 2.5rem;
+			}
+
+			@include padding(1rem 0 1.5rem 0);
+			@include margin(0.5rem 0);
+			@include grid-column(12);
+			font-size: 2rem;
+			border-bottom: 2px solid $color-dark-grey-1;
+		}
+
+		a {
+			@include padding(0 0 0 0.5rem);
+			font-size: $default-font-size;
+			color: $color-red-1;
+			text-decoration: none;
+
+			&:hover {
+				color: $color-white;
+				transition: 0.25s;
+			}
+		}
+	}
+
+	&__featured-work {
+		@include grid-container;
+
+		&--project {
+			@include grid-column(4);
+
+			@include respond(phone) {
+				@include grid-column(12);
+				@include padding(2rem 0rem);
+			}
+
+			img {
+				width: 100%;
+			}
+
+			h6 {
+				@include respond(tab-port) {
+					font-size: 2rem;
+				}
+
+				color: $color-white;
+				font-size: 1.5rem;
+				font-weight: bold;
+				text-decoration: none;
+				line-height: 2.5rem;
+			}
+
+			span {
+				color: $color-teal-1;
+			}
+
+			p {
+				@include respond(tab-port) {
+					font-size: 1.5rem;
+					line-height: 2rem;
+				}
+
+				font-size: $default-font-size;
+				line-height: 1.5rem;
+			}
+
+			a {
+				color: $color-white;
+				font-size: $default-font-size;
+				font-weight: bold;
+				line-height: 2.5rem;
+				text-decoration: none;
+
+				&:hover {
+					color: $color-red-1;
+					transition: 0.25s;
+				}
+			}
+		}
+	}
+
+	&__the-wire {
+		@include grid-container;
+		@include margin(0 0 25rem 0);
+
+		&--project {
+			@include respond(phone) {
+				@include grid-column(12);
+				border-bottom: 1px solid $color-dark-grey-1;
+			}
+
+			@include grid-column(4);
+			@include padding(2rem 0rem);
+
+			h2 {
+				@include margin(1rem 0);
+				color: $color-white;
+				font-size: 3.2rem;
+				font-weight: bold;
+				text-decoration: none;
+				line-height: 4rem;
+
+				&:hover {
+					color: $color-teal-1;
+					transition: 0.25s;
+				}
+			}
+
+			p {
+				@include respond(tab-port) {
+					font-size: 1.5rem;
+					line-height: 2rem;
+				}
+
+				@include padding(0 0 0.7rem);
+				font-size: $default-font-size;
+				line-height: 2rem;
+			}
+
+			a {
+				color: $color-white;
+				font-size: $default-font-size;
+				font-weight: bold;
+				line-height: 2.5rem;
+				text-decoration: none;
+
+				&:hover {
+					color: $color-red-1;
+					transition: 0.25s;
+				}
+			}
+		}
+	}
+}

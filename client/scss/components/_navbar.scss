@@ -1,0 +1,132 @@
+.navigation {
+	@include padding(0 2rem);
+	@include size(100% auto);
+	background-color: rgba(0, 0, 0, 0.75);
+	transition: 1s;
+	position: fixed;
+	z-index: 10;
+
+	&-bar {
+		@include respond(tab-port) {
+			width: 100%;
+		}
+
+		@include padding(0.8rem 0);
+		@include grid-container;
+		list-style-type: none;
+		min-height: 6.5vh;
+		width: 80%;
+		margin: auto;
+		overflow: hidden;
+
+		.envoy-logo {
+			text-decoration: none;
+			text-transform: uppercase;
+			color: $color-grey;
+			font-family: tradeGothic;
+			font-size: 3.2rem;
+			line-height: 0.8rem;
+		}
+
+		li {
+			float: left;
+
+			&.logo-container.navigation-link {
+				top: 2vh;
+				position: relative;
+			}
+
+			&.navigation-link {
+				top: 2.5vh;
+				position: relative;
+			}
+
+			&.navigation-mobile {
+				display: none;
+			}
+
+			a:not(.envoy-logo) {
+				@include padding(0 0 0 2.5rem);
+				@include margin(0);
+				display: inline-block;
+				color: $color-white;
+
+				text-decoration: none;
+				font-weight: bold;
+				font-size: $default-font-size;
+
+				&:visited {
+					color: $color-grey;
+				}
+			}
+
+			a {
+				transition: 0.25s;
+				&:hover {
+					color: $color-red-1;
+				}
+			}
+
+			&.twitter-button {
+				@include respond(tab-port) {
+					display: none;
+				}
+
+				float: right;
+
+				img {
+					position: relative;
+					bottom: -1.1rem;
+				}
+			}
+
+			&.navigation-mobile {
+				a {
+					font-size: 3rem !important;
+				}
+			}
+		}
+	}
+
+	// Responsive hamburger menu
+
+	@include respond(tab-port) {
+		.navigation-bar li:not(:first-child) {
+			display: none;
+		}
+
+		.navigation-bar li.navigation-mobile {
+			float: right;
+			display: block;
+		}
+
+		.navigation-bar.responsive {
+			@include padding(0.5rem 0 3rem);
+			position: relative;
+		}
+
+		.navigation-bar.responsive li.navigation-mobile {
+			@include padding(0.5rem 0);
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+
+		.navigation-bar.responsive li {
+			float: none;
+			display: inline;
+		}
+
+		.navigation-bar.responsive li a:not(.envoy-logo) {
+			@include padding(0);
+			@include margin(5% 0);
+			display: block;
+			text-align: left;
+			font-size: 1.5rem;
+		}
+
+		.navigation-bar.responsive li.twitter-button {
+			display: none;
+		}
+	}
+}

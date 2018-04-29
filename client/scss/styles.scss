@@ -7,4 +7,9 @@
 @import "base/base";
 @import "base/typography";
 
-@import "pages/home";
+@import "components/about";
+@import "components/carousel";
+@import "components/navbar";
+
+@import "slick/slick";
+@import "slick/theme";

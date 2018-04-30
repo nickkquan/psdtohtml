@@ -24,7 +24,7 @@ function activateHamburgerMenu() {
 
 function navBarTransparency() {
 	$(window).scroll(function() {
-		if ($(window).scrollTop() >= 300) {
+		if ($(window).scrollTop() >= 150) {
 			$(".navigation").css("background", "black");
 		} else {
 			$(".navigation").css("background", "rgba(0, 0, 0, 0.75)");

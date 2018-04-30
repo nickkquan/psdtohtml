@@ -107,9 +107,7 @@
 
 		.navigation-bar.responsive li.navigation-mobile {
 			@include padding(0.5rem 0);
-			position: absolute;
-			right: 0;
-			top: 0;
+			@include position(absolute, 0 0 null null);
 		}
 
 		.navigation-bar.responsive li {

@@ -76,6 +76,10 @@
 	.text-left,
 	.text-right {
 		@include grid-column(4);
+
+		p {
+			@include padding(0rem null 2rem 0);
+		}
 	}
 
 	.text-left {

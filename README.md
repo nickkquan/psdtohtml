@@ -12,3 +12,4 @@
 > 4.  Install dependencies: `npm install`
 > 5.  Start Gulp tasks: `gulp watch`
 > 6.  Open a browser and navigate to: `localhost:3000`
+> 7.  Running `gulp export` will bundle the client folder into a zip folder.  

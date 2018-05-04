@@ -13,6 +13,9 @@ const bourbon = require("node-bourbon").includePaths;
 const neat = require("node-neat").includePaths;
 const sass = require("gulp-sass");
 
+// JS pluh-in
+const babel = require("gulp-babel");
+
 // Delete plug-in
 const del = require("del");
 
@@ -76,6 +79,11 @@ gulp.task("scripts", () => {
 			})
 		)
 		.pipe(sourcemaps.init())
+		.pipe(
+			babel({
+				presets: ["es2015"]
+			})
+		)
 		.pipe(uglify())
 		.pipe(concat("script.js"))
 		.pipe(sourcemaps.write())
